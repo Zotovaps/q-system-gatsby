@@ -168,7 +168,9 @@ const IndexPage = ({data}) => {
         let requestOptions = {
             method: 'POST',
             body: raw,
-            redirect: 'follow'
+            headers: {
+                'Content-Type': 'application/json',
+            },
         };
 
         fetch("https://d5d603o45jf9c91p4q4q.apigw.yandexcloud.net/folder", requestOptions)
