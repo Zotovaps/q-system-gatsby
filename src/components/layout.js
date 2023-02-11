@@ -1,5 +1,6 @@
 import React from "react"
-import { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
+import Slider from "./slider";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -31,11 +32,29 @@ const GlobalStyle = createGlobalStyle`
   }
 
 `
+
+const IndexFrame = styled.div`
+  display: flex;
+  flex-direction: row;
+  
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+
+  background: #FAFBFF;
+
+
+`
+
+
 export default function Layout({ children }) {
     return (
         <React.Fragment>
             <GlobalStyle/>
-            {children}
+            <IndexFrame>
+                {/*<Slider/>*/}
+                {children}
+            </IndexFrame>
         </React.Fragment>
     )
 }

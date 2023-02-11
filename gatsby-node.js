@@ -139,6 +139,29 @@ exports.sourceNodes = async ({actions: {createNode}, createContentDigest,}) => {
         })
     }
 
+    const resultDeterminants = await fetch(`https://d5d603o45jf9c91p4q4q.apigw.yandexcloud.net/determinant`)
+    const resultDeterminantsData = await resultDeterminants.json()
+
+    for (var k = 0; k < resultDeterminantsData.length; k++)
+    {
+        createNode({
+            // nameWithOwner and url are arbitrary fields from the data
+            algorithmId: resultDeterminantsData[k].algorithmId,
+            determinantId: resultDeterminantsData[k].determinantId,
+            dimensions: resultDeterminantsData[k].dimensions,
+            processors: resultDeterminantsData[k].processors,
+            ticks: resultDeterminantsData[k].ticks,
+            iterations: resultDeterminantsData[k].iterations || null,
+            // required fields
+            id: `determinants-get-${k}`,
+            parent: null,
+            children: [],
+            internal: {
+                type: `Determinants`,
+                contentDigest: createContentDigest(resultDeterminantsData),
+            },
+        })
+    }
 }
 
 
