@@ -180,8 +180,8 @@ exports.createPages = async ({graphql, actions}) => {
 
     data.allAlgorithms.nodes.forEach(node => {
         actions.createPage({
-            path: "/algo/"+ node.algorithmId,
-            component: path.resolve('./src/templates/algorithm.js'),
+            path: "/determinants/"+ node.algorithmId,
+            component: path.resolve('./src/templates/determinants.js'),
             context: {
                 algorithm: node.algorithmId
             }

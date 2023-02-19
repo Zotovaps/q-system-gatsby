@@ -63,7 +63,14 @@ const NavigationTree = (props) => {
 
             {show && props.algorithms && props.algorithms.filter(i => i.folderId === props.item.folderId).map((item, index) => {
                 return (
-                    <NavigationTreeItem key={index} isFolder={false} level={props.level + 1} item={item.nameRu} onClick={() => props.selectedAlgorithm.setValue(item)}/>
+                    <NavigationTreeItem key={index}
+                                        item={item.nameRu}
+                                        isFolder={false}
+                                        level={props.level + 1}
+                                        onClick={() => {
+                                            window.location.hash = item.algorithmId
+                                            props.selectedAlgorithm.setValue(item)
+                                        }}/>
                 )
             })}
 

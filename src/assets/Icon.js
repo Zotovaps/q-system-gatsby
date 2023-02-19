@@ -13,11 +13,10 @@ export const SliderIconStyled = styled(sliderIcon)`
 
 export const SectionIconStyled = styled(sectionIcon)`
   cursor: pointer;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  width: 26px;
+  height: 26px;
   background: ${props => props.checked ? "#ECEDF4" : "none"};
-  padding: 5px;
+  padding: 4px;
   border-radius: 8px;
   
   &:hover {

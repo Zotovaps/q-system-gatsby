@@ -13,6 +13,12 @@ const GlobalStyle = createGlobalStyle`
     user-select: none;
     overflow-x: hidden;
   }
+  
+  .nav-link.active {
+    background: #FAFBFF !important;
+    color: #2D334D !important;
+    border-bottom: 1px solid #FAFBFF !important
+  }
 
   ::-webkit-scrollbar-track
   {
@@ -42,6 +48,7 @@ const IndexFrame = styled.div`
   height: 100vh;
 
   background: #FAFBFF;
+  overflow: hidden;
 
 
 `
